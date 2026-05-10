@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serres Royales de Laeken — Brussel</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green-deep:   #0f1f0f;
+  --green-forest: #1a3320;
+  --green-mid:    #2d5238;
+  --green-moss:   #4a7c59;
+  --green-sage:   #7aab8a;
+  --green-mist:   #b8d4bf;
+  --green-pale:   #e4f0e8;
+  --gold:         #c9a84c;
+  --gold-light:   #e8cc7a;
+  --gold-pale:    #f5e8c0;
+  --cream:        #f7f3ed;
+  --white:        #ffffff;
+  --text-light:   rgba(247,243,237,0.9);
+  --text-mid:     rgba(184,212,191,0.8);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--green-deep);
+  color: var(--cream);
+  overflow-x: hidden;
+  padding-bottom: 100px;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  height: 64px;
+  background: rgba(10,20,10,0.75);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+  transition: background 0.3s;
+}
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--gold-light);
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-logo span { color: var(--green-sage); font-style: italic; }
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--green-mist);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--gold-light); }
+
+/* Language switcher */
+.lang-switcher {
+  display: flex;
+  gap: 6px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: 1px solid rgba(122,171,138,0.3);
+  color: var(--green-sage);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.lang-btn.active,
+.lang-btn:hover {
+  background: rgba(201,168,76,0.15);
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+/* ── HERO ────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/29/Serres_royales_de_Laeken-2018_%2812%29.jpg');
+  background-size: cover;
+  background-position: center 30%;
+  transform: scale(1.05);
+  animation: hero-zoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes hero-zoom {
+  from { transform: scale(1.05); }
+  to   { transform: scale(1.12); }
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg,
+      rgba(10,20,10,0.3) 0%,
+      rgba(10,20,10,0.45) 40%,
+      rgba(10,20,10,0.85) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+  padding: 0 24px;
+  animation: fade-up 1.2s cubic-bezier(0.22,1,0.36,1) both;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 18px;
+  opacity: 0.9;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(42px, 7vw, 88px);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--cream);
+  margin-bottom: 12px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--green-sage);
+}
+
+.hero-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(16px, 2.5vw, 22px);
+  font-style: italic;
+  color: var(--green-mist);
+  margin-bottom: 36px;
+  font-weight: 300;
+}
+
+.hero-cta {
+  display: inline-block;
+  background: transparent;
+  border: 1px solid rgba(201,168,76,0.6);
+  color: var(--gold-light);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 14px 36px;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.hero-cta:hover { color: var(--green-deep); }
+.hero-cta:hover::before { transform: scaleX(1); }
+
+.hero-scroll {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(184,212,191,0.5);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  animation: scroll-bob 2s ease-in-out infinite;
+}
+
+@keyframes scroll-bob {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(6px); }
+}
+
+.hero-scroll svg { width: 20px; opacity: 0.5; }
+
+/* ── STAT BAR ────────────────────────────────────────── */
+.stat-bar {
+  background: var(--green-forest);
+  border-top: 1px solid rgba(201,168,76,0.15);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  divide-x: 1px solid red;
+}
+
+.stat-item {
+  padding: 28px 20px;
+  text-align: center;
+  border-right: 1px solid rgba(122,171,138,0.12);
+  transition: background 0.2s;
+}
+
+.stat-item:last-child { border-right: none; }
+.stat-item:hover { background: rgba(74,124,89,0.1); }
+
+.stat-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px;
+  font-weight: 300;
+  color: var(--gold-light);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.stat-label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--green-sage);
+  font-weight: 400;
+}
+
+/* ── SECTIONS GENERIC ────────────────────────────────── */
+section {
+  padding: 96px 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-tag {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 300;
+  color: var(--cream);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.section-title em { font-style: italic; color: var(--green-sage); }
+
+.section-body {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--green-mist);
+  max-width: 640px;
+  font-weight: 300;
+}
+
+/* ── HISTOIRE ────────────────────────────────────────── */
+#histoire {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.histoire-img-wrap {
+  position: relative;
+}
+
+.histoire-img-wrap img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.histoire-img-wrap::before {
+  content: '';
+  position: absolute;
+  top: -16px; left: -16px;
+  right: 16px; bottom: 16px;
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 4px;
+  z-index: -1;
+}
+
+.architect-card {
+  margin-top: 32px;
+  padding: 20px 24px;
+  background: rgba(45,82,56,0.3);
+  border: 1px solid rgba(122,171,138,0.2);
+  border-left: 3px solid var(--gold);
+  border-radius: 2px;
+}
+
+.architect-card .name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: var(--gold-light);
+  margin-bottom: 4px;
+}
+
+.architect-card .dates {
+  font-size: 12px;
+  color: var(--green-sage);
+  letter-spacing: 0.06em;
+}
+
+/* ── PAVILJOENEN ─────────────────────────────────────── */
+#paviljoenen { padding-top: 0; }
+
+.paviljoenen-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.paviljoen-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  aspect-ratio: 3/4;
+  cursor: pointer;
+  group: true;
+}
+
+.paviljoen-card img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+  display: block;
+}
+
+.paviljoen-card:hover img { transform: scale(1.08); }
+
+.paviljoen-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 30%, rgba(10,20,10,0.92) 100%);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.paviljoen-icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.paviljoen-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  color: var(--cream);
+  font-weight: 400;
+  margin-bottom: 6px;
+  line-height: 1.1;
+}
+
+.paviljoen-desc {
+  font-size: 12.5px;
+  color: var(--green-mist);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.paviljoen-tag {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(201,168,76,0.3);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+/* ── BEZOEK INFO ─────────────────────────────────────── */
+#bezoek {
+  background: var(--green-forest);
+  max-width: 100%;
+  padding: 96px 0;
+}
+
+.bezoek-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.info-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.info-card {
+  background: rgba(10,20,10,0.4);
+  border: 1px solid rgba(122,171,138,0.15);
+  border-radius: 4px;
+  padding: 24px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.info-card:hover {
+  border-color: rgba(201,168,76,0.3);
+  transform: translateY(-3px);
+}
+
+.info-card .icon { font-size: 28px; margin-bottom: 12px; }
+
+.info-card .label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.info-card .value {
+  font-size: 14px;
+  color: var(--cream);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.info-card .value strong {
+  color: var(--gold-light);
+  font-weight: 500;
+}
+
+.bezoek-map-placeholder {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(122,171,138,0.2);
+}
+
+.bezoek-map-placeholder img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.6) brightness(0.8);
+  transition: filter 0.3s;
+}
+
+.bezoek-map-placeholder:hover img { filter: saturate(0.8) brightness(0.9); }
+
+.map-pin-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.map-pin {
+  width: 48px; height: 48px;
+  background: var(--gold);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  box-shadow: 0 4px 20px rgba(201,168,76,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pin-pulse 2s ease-in-out infinite;
+}
+
+.map-pin span {
+  transform: rotate(45deg);
+  font-size: 20px;
+}
+
+@keyframes pin-pulse {
+  0%,100% { box-shadow: 0 4px 20px rgba(201,168,76,0.5); }
+  50% { box-shadow: 0 4px 40px rgba(201,168,76,0.8); }
+}
+
+.map-address {
+  background: rgba(10,20,10,0.85);
+  border: 1px solid rgba(201,168,76,0.3);
+  padding: 10px 18px;
+  border-radius: 4px;
+  font-size: 13px;
+  color: var(--cream);
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+/* ── GALLERY STRIP ───────────────────────────────────── */
+#galerie {
+  padding: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.gallery-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 96px 48px 48px;
+}
+
+.gallery-strip {
+  display: flex;
+  gap: 4px;
+  height: 340px;
+}
+
+.gallery-strip img {
+  flex: 1;
+  object-fit: cover;
+  min-width: 0;
+  transition: flex 0.5s cubic-bezier(0.22,1,0.36,1), filter 0.4s;
+  filter: saturate(0.7) brightness(0.85);
+  cursor: pointer;
+}
+
+.gallery-strip img:hover {
+  flex: 3;
+  filter: saturate(1) brightness(1);
+}
+
+/* ── TICKET SECTION ──────────────────────────────────── */
+#tickets {
+  text-align: center;
+  padding: 96px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+#tickets::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(74,124,89,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.ticket-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 100px;
+  font-weight: 300;
+  color: var(--gold-light);
+  line-height: 1;
+  margin: 32px 0 8px;
+}
+
+.ticket-price sup {
+  font-size: 40px;
+  vertical-align: super;
+  margin-right: 4px;
+}
+
+.ticket-note {
+  font-size: 14px;
+  color: var(--green-sage);
+  margin-bottom: 48px;
+  font-style: italic;
+}
+
+.ticket-btn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--green-deep);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 16px 48px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 8px 32px rgba(201,168,76,0.3);
+}
+
+.ticket-btn:hover {
+  background: var(--gold-light);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 48px rgba(201,168,76,0.4);
+}
+
+.ticket-features {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 56px;
+  flex-wrap: wrap;
+}
+
+.ticket-feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--green-mist);
+}
+
+.ticket-feature .dot {
+  width: 6px; height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+/* ── FEEDBACK SECTION ────────────────────────────────── */
+#feedback {
+  background: var(--green-forest);
+  border-top: 1px solid rgba(201,168,76,0.12);
+  border-bottom: 1px solid rgba(201,168,76,0.12);
+  max-width: 100%;
+  padding: 80px 0;
+}
+
+.feedback-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.feedback-inner .section-tag { text-align: center; }
+.feedback-inner .section-title { text-align: center; }
+
+.feedback-sub {
+  font-size: 15px;
+  color: var(--green-mist);
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.feedback-form-wrap {
+  background: rgba(10,20,10,0.35);
+  border: 1px solid rgba(122,171,138,0.18);
+  border-radius: 8px;
+  padding: 32px 28px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+}
+
+/* ── PORTFOLIO BAR ───────────────────────────────────── */
+.portfolio-bar {
+  background: rgba(10,20,10,0.6);
+  border-top: 1px solid rgba(122,171,138,0.1);
+  padding: 16px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.portfolio-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(122,171,138,0.5);
+  font-weight: 500;
+  margin-right: 4px;
+}
+
+.portfolio-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: rgba(201,168,76,0.55);
+  text-decoration: none;
+  border: 1px solid rgba(201,168,76,0.18);
+  padding: 4px 12px;
+  border-radius: 20px;
+  transition: all 0.2s;
+  letter-spacing: 0.04em;
+}
+
+.portfolio-link:hover {
+  color: var(--gold-light);
+  border-color: rgba(201,168,76,0.45);
+  background: rgba(201,168,76,0.07);
+}
+
+/* ── FOOTER ──────────────────────────────────────────── */
+footer {
+  background: var(--green-deep);
+  border-top: 1px solid rgba(201,168,76,0.12);
+  padding: 48px;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  color: var(--gold-light);
+  margin-bottom: 12px;
+}
+
+.footer-sub {
+  font-size: 12px;
+  color: rgba(122,171,138,0.4);
+  letter-spacing: 0.1em;
+}
+
+/* ── CHATBOT WIDGET ──────────────────────────────────── */
+.chat-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.chat-toggle {
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green-moss), var(--green-mid));
+  border: 2px solid rgba(201,168,76,0.4);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 0 0 rgba(201,168,76,0.3);
+  transition: all 0.3s;
+  animation: toggle-pulse 3s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes toggle-pulse {
+  0%,100% { box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 0 0 rgba(74,124,89,0.4); }
+  50% { box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 0 12px rgba(74,124,89,0); }
+}
+
+.chat-toggle:hover {
+  transform: scale(1.08);
+  border-color: var(--gold);
+}
+
+.chat-badge {
+  position: absolute;
+  top: -4px; right: -4px;
+  width: 18px; height: 18px;
+  background: var(--gold);
+  border-radius: 50%;
+  border: 2px solid var(--green-deep);
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--green-deep);
+  font-weight: 700;
+}
+
+.chat-panel {
+  width: 380px;
+  height: 560px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,168,76,0.2);
+  transform-origin: bottom right;
+  transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), opacity 0.3s;
+  transform: scale(0) translateY(20px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chat-panel.open {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Chat header */
+.cp-header {
+  background: linear-gradient(135deg, var(--green-forest), var(--green-deep));
+  padding: 18px 20px 16px;
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.cp-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.cp-avatar {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green-moss), var(--green-sage));
+  border: 2px solid rgba(201,168,76,0.35);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  box-shadow: 0 0 16px rgba(74,124,89,0.4);
+}
+
+.cp-info h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  color: var(--cream);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.cp-info span {
+  font-size: 11px;
+  color: var(--gold-light);
+  letter-spacing: 0.08em;
+  display: block;
+  margin-top: 2px;
+}
+
+.cp-online {
+  width: 8px; height: 8px;
+  background: #6bcf8a;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(107,207,138,0.6);
+  margin-left: auto;
+  animation: pulse-dot 2.5s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.cp-close {
+  background: transparent;
+  border: none;
+  color: rgba(184,212,191,0.5);
+  font-size: 22px;
+  cursor: pointer;
+  padding: 0 0 0 8px;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.cp-close:hover { color: var(--cream); }
+
+@keyframes pulse-dot {
+  0%,100% { opacity:1; transform:scale(1); }
+  50% { opacity:0.5; transform:scale(0.8); }
+}
+
+/* Chat messages */
+.cp-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 14px;
+  background: linear-gradient(180deg, rgba(15,31,15,0.97), rgba(10,20,10,0.99));
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--green-moss) transparent;
+}
+
+.cp-messages::-webkit-scrollbar { width: 3px; }
+.cp-messages::-webkit-scrollbar-thumb { background: var(--green-moss); border-radius: 3px; }
+
+.msg { display: flex; gap: 8px; animation: msg-in 0.35s cubic-bezier(0.34,1.56,0.64,1) both; }
+.msg.user { flex-direction: row-reverse; }
+
+@keyframes msg-in {
+  from { opacity:0; transform:translateY(10px) scale(0.97); }
+  to   { opacity:1; transform:none; }
+}
+
+.msg-av {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.msg.bot .msg-av {
+  background: linear-gradient(135deg, var(--green-moss), var(--green-sage));
+  border: 1px solid rgba(201,168,76,0.25);
+}
+
+.msg.user .msg-av {
+  background: rgba(201,168,76,0.12);
+  border: 1px solid rgba(201,168,76,0.25);
+  font-size: 11px;
+}
+
+.bubble {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.msg.bot .bubble {
+  background: linear-gradient(135deg, rgba(45,82,56,0.75), rgba(30,55,38,0.85));
+  border: 1px solid rgba(122,171,138,0.18);
+  color: var(--green-mist);
+  border-bottom-left-radius: 4px;
+}
+
+.msg.user .bubble {
+  background: rgba(201,168,76,0.18);
+  border: 1px solid rgba(201,168,76,0.25);
+  color: var(--gold-light);
+  border-bottom-right-radius: 4px;
+  text-align: right;
+}
+
+.bubble strong { color: var(--gold-light); font-weight: 500; }
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 2px 0 0 36px;
+  animation: msg-in 0.4s ease both;
+}
+
+.chip {
+  background: rgba(45,82,56,0.4);
+  border: 1px solid rgba(122,171,138,0.2);
+  color: var(--green-sage);
+  font-size: 11px;
+  padding: 5px 11px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.chip:hover {
+  background: rgba(74,124,89,0.45);
+  border-color: rgba(201,168,76,0.35);
+  color: var(--gold-light);
+}
+
+.typing-ind {
+  display: flex; gap: 8px; align-items: center;
+  animation: msg-in 0.3s ease both;
+}
+
+.t-dots {
+  background: linear-gradient(135deg, rgba(45,82,56,0.75), rgba(30,55,38,0.85));
+  border: 1px solid rgba(122,171,138,0.18);
+  border-radius: 16px;
+  border-bottom-left-radius: 4px;
+  padding: 12px 16px;
+  display: flex; gap: 5px;
+}
+
+.t-dots span {
+  width: 5px; height: 5px;
+  background: var(--green-sage);
+  border-radius: 50%;
+  animation: bounce 1.2s ease-in-out infinite;
+}
+
+.t-dots span:nth-child(2) { animation-delay: 0.2s; }
+.t-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+  0%,80%,100% { transform:translateY(0); opacity:0.4; }
+  40% { transform:translateY(-5px); opacity:1; }
+}
+
+/* Chat input */
+.cp-input {
+  background: var(--green-deep);
+  border-top: 1px solid rgba(201,168,76,0.12);
+  padding: 12px 14px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.cp-input::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent);
+}
+
+.cp-textarea {
+  flex: 1;
+  background: rgba(45,82,56,0.3);
+  border: 1px solid rgba(122,171,138,0.2);
+  border-radius: 14px;
+  padding: 9px 14px;
+  color: var(--green-mist);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  resize: none;
+  outline: none;
+  max-height: 80px;
+  overflow-y: auto;
+  transition: border-color 0.2s;
+  line-height: 1.5;
+  scrollbar-width: none;
+}
+
+.cp-textarea::placeholder { color: rgba(122,171,138,0.4); }
+.cp-textarea:focus { border-color: rgba(201,168,76,0.4); }
+
+.cp-send {
+  width: 38px; height: 38px;
+  background: linear-gradient(135deg, var(--green-moss), var(--green-mid));
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.cp-send:hover {
+  background: linear-gradient(135deg, var(--green-sage), var(--green-moss));
+  transform: scale(1.08);
+}
+
+.cp-send svg { width: 16px; fill: var(--cream); transform: translateX(1px); }
+
+/* ── RESPONSIVE ──────────────────────────────────────── */
+@media (max-width: 900px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  section { padding: 64px 24px; }
+  #histoire { grid-template-columns: 1fr; gap: 40px; }
+  .paviljoenen-grid { grid-template-columns: 1fr 1fr; }
+  .stat-bar { grid-template-columns: repeat(2,1fr); }
+  .bezoek-inner { grid-template-columns: 1fr; gap: 40px; padding: 0 24px; }
+  .info-cards { grid-template-columns: 1fr 1fr; }
+  .chat-panel { width: 340px; height: 500px; }
+  #bezoek { padding: 64px 0; }
+  .gallery-header { padding: 64px 24px 40px; }
+  .ticket-price { font-size: 72px; }
+}
+
+@media (max-width: 560px) {
+  .paviljoenen-grid { grid-template-columns: 1fr; }
+  .stat-bar { grid-template-columns: repeat(2,1fr); }
+  .chat-panel { width: calc(100vw - 48px); right: 0; }
+  .chat-widget { right: 16px; bottom: 16px; }
+  .ticket-features { gap: 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a class="nav-logo" href="#"><span>Serres</span> Royales de Laeken</a>
+  <ul class="nav-links">
+    <li><a href="#histoire" data-i18n="nav_histoire">Histoire</a></li>
+    <li><a href="#paviljoenen" data-i18n="nav_paviljoenen">Paviljoenen</a></li>
+    <li><a href="#bezoek" data-i18n="nav_bezoek">Bezoek</a></li>
+    <li><a href="#tickets" data-i18n="nav_tickets">Tickets</a></li>
+  </ul>
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="setLang('nl')">NL</button>
+    <button class="lang-btn" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow" data-i18n="hero_eyebrow">Domaine Royal de Laeken · Brussel</div>
+    <h1 data-i18n="hero_title">Serres<br><em>Royales</em><br>de Laeken</h1>
+    <p class="hero-sub" data-i18n="hero_sub">Een botanisch juweel van het Belgisch Koningshuis — slechts drie weken per jaar te bewonderen.</p>
+    <a href="#bezoek" class="hero-cta" data-i18n="hero_cta">Plan uw bezoek</a>
+  </div>
+  <div class="hero-scroll">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    <span data-i18n="hero_scroll">Ontdek</span>
+  </div>
+</div>
+
+<!-- STAT BAR -->
+<div class="stat-bar">
+  <div class="stat-item">
+    <div class="stat-number">1874</div>
+    <div class="stat-label" data-i18n="stat_year">Eerste steen</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">36</div>
+    <div class="stat-label" data-i18n="stat_pav">Paviljoenen</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">2,5ha</div>
+    <div class="stat-label" data-i18n="stat_surface">Oppervlakte</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">€4</div>
+    <div class="stat-label" data-i18n="stat_ticket">Per persoon</div>
+  </div>
+</div>
+
+<!-- HISTOIRE -->
+<section id="histoire">
+  <div class="histoire-img-wrap">
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/8/87/Laeken_Royal_Greenhouses_%286%29.jpg"
+      alt="Serres Royales de Laeken extérieur"
+      loading="lazy">
+  </div>
+  <div>
+    <div class="section-tag" data-i18n="histoire_tag">Geschiedenis & Architectuur</div>
+    <h2 class="section-title" data-i18n="histoire_title">Een <em>meesterwerk</em> in glas en ijzer</h2>
+    <p class="section-body" data-i18n="histoire_body">
+      Diep in het Koninklijk Domein van Laeken, verscholen achter eeuwenoude bomen, sluimert een botanisch wonder dat de wereld nauwelijks kent. Hofarchitect Alphonse Balat — leermeester van Victor Horta — tekende tussen 1874 en 1905 een serrecomplex van 36 paviljoenen dat de grenzen vervagt tussen kunst, natuur en koninklijke grandeur. Drie weken per jaar mogen wij binnenstappen in zijn droom.
+    </p>
+    <div class="architect-card" style="margin-top:32px">
+      <div class="name">Alphonse Balat</div>
+      <div class="dates" data-i18n="arch_dates">Architect · Bouw: 1874–1905</div>
+      <p style="font-size:13px;color:var(--green-mist);margin-top:10px;line-height:1.7;font-weight:300;" data-i18n="arch_body">
+        Hofarchitect Alphonse Balat was ook de leermeester van Victor Horta. Hij ontwierp de serres in een neoclassicistische stijl met indrukwekkende glas-en-ijzerconstructies die de tand des tijds hebben doorstaan.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PAVILJOENEN -->
+<section id="paviljoenen" style="max-width:1200px;margin:0 auto;padding:0 48px 96px;">
+  <div class="section-tag" data-i18n="pav_tag">De drie iconen</div>
+  <h2 class="section-title" data-i18n="pav_title">Bekende <em>Paviljoenen</em></h2>
+  <div class="paviljoenen-grid">
+
+    <div class="paviljoen-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Jardin_d%27hiver_des_serres_du_ch%C3%A2teau_royal_de_Laeken.jpg" alt="Jardin d'Hiver" loading="lazy">
+      <div class="paviljoen-overlay">
+        <div class="paviljoen-icon">🏛️</div>
+        <div class="paviljoen-name">Jardin d'Hiver</div>
+        <div class="paviljoen-desc" data-i18n="pav1_desc">De iconische glazen koepel — het kloppende hart van het serrecomplex met een indrukwekkende centrale rotonde waar licht en planten in perfecte harmonie samenkomen.</div>
+        <span class="paviljoen-tag" data-i18n="pav1_tag">Hoofdpaviljoen</span>
+      </div>
+    </div>
+
+    <div class="paviljoen-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Interior_view_-_Laeken_Royal_Greenhouses_-_Royal_Castle_of_Laeken_-_Brussels%2C_Belgium_-_DSC07312.jpg" alt="Serre du Congo" loading="lazy">
+      <div class="paviljoen-overlay">
+        <div class="paviljoen-icon">🌴</div>
+        <div class="paviljoen-name">Serre du Congo</div>
+        <div class="paviljoen-desc" data-i18n="pav2_desc">Exotische tropische planten uit voormalig Belgisch Congo, waaronder indrukwekkende palmbomen die de hoogte in reiken alsof ze nog altijd midden in de jungle staan.</div>
+        <span class="paviljoen-tag" data-i18n="pav2_tag">Tropisch</span>
+      </div>
+    </div>
+
+    <div class="paviljoen-card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Plants_-_Laeken_Royal_Greenhouses_-_Royal_Castle_of_Laeken_-_Brussels%2C_Belgium_-_DSC07464.jpg" alt="Orangerie" loading="lazy">
+      <div class="paviljoen-overlay">
+        <div class="paviljoen-icon">🍊</div>
+        <div class="paviljoen-name">Orangerie</div>
+        <div class="paviljoen-desc" data-i18n="pav3_desc">Eeuwenoude citrus- en laurierbomen in een sierlijk paviljoen dat pure 19e-eeuwse charme uitstraalt — alsof de tijd hier heeft stilgestaan.</div>
+        <span class="paviljoen-tag" data-i18n="pav3_tag">Citrus &amp; Laurier</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="galerie">
+  <div class="gallery-header">
+    <div class="section-tag" data-i18n="gal_tag">Beeldgalerij</div>
+    <h2 class="section-title" data-i18n="gal_title">Botanische <em>Schoonheid</em></h2>
+  </div>
+  <div class="gallery-strip">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Serres_royales_de_Laeken-2018_%2812%29.jpg" alt="Serres Royales extérieur" loading="lazy">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Jardin_d%27hiver_des_serres_du_ch%C3%A2teau_royal_de_Laeken.jpg" alt="Jardin d'Hiver koepel" loading="lazy">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Interior_view_-_Laeken_Royal_Greenhouses_-_Royal_Castle_of_Laeken_-_Brussels%2C_Belgium_-_DSC07312.jpg" alt="Interieur tropische planten" loading="lazy">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Koninklijke_Serres_van_Laken_-_wintertuin.jpg" alt="Wintertuin interieur" loading="lazy">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Embarcad%C3%A8re_-_Royal_Castle_of_Laeken_-_Brussels%2C_Belgium_-_DSC07107.jpg" alt="Embarcadère paviljoen" loading="lazy">
+  </div>
+</section>
+
+<!-- BEZOEK -->
+<div id="bezoek" style="background:var(--green-forest);border-top:1px solid rgba(201,168,76,0.12);border-bottom:1px solid rgba(201,168,76,0.12);">
+  <div class="bezoek-inner">
+    <div>
+      <div class="section-tag" data-i18n="bezoek_tag">Praktische Info</div>
+      <h2 class="section-title" data-i18n="bezoek_title">Plan uw <em>Bezoek</em></h2>
+      <p class="section-body" data-i18n="bezoek_body">De Serres zijn slechts enkele weken per jaar open — een zeldzame kans die u niet wil missen.</p>
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="icon">📍</div>
+          <div class="label" data-i18n="ic_adres">Adres</div>
+          <div class="value">Avenue du Parc Royal 61<br><strong>1020 Brussel</strong></div>
+        </div>
+        <div class="info-card">
+          <div class="icon">🚇</div>
+          <div class="label" data-i18n="ic_metro">Metro</div>
+          <div class="value" data-i18n="ic_metro_val">Lijn <strong>6</strong><br>Halte <strong>Stuyvenbergh</strong></div>
+        </div>
+        <div class="info-card">
+          <div class="icon">📅</div>
+          <div class="label" data-i18n="ic_open">Opening</div>
+          <div class="value" data-i18n="ic_open_val"><strong>April – Mei</strong><br>ca. 3 weken per jaar</div>
+        </div>
+        <div class="info-card">
+          <div class="icon">🎟️</div>
+          <div class="label" data-i18n="ic_ticket">Ticket</div>
+          <div class="value" data-i18n="ic_ticket_val"><strong>€4</strong> per persoon<br>Online via monarchie.be</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="bezoek-map-placeholder">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Laeken_Greenhouses.jpg" alt="Serres Royales de Laeken" loading="lazy">
+        <div class="map-pin-overlay">
+          <div class="map-pin"><span>🌿</span></div>
+          <div class="map-address">Avenue du Parc Royal 61, 1020 Brussel</div>
+        </div>
+      </div>
+      <p style="font-size:11px;color:rgba(122,171,138,0.4);text-align:center;margin-top:10px;letter-spacing:0.06em;" data-i18n="map_note">Domaine Royal de Laeken · Noord Brussel</p>
+    </div>
+  </div>
+</div>
+
+<!-- TICKETS -->
+<section id="tickets">
+  <div class="section-tag" data-i18n="tick_tag">Reserveer nu</div>
+  <h2 class="section-title" data-i18n="tick_title">Uw Toegangs<em>ticket</em></h2>
+  <div class="ticket-price"><sup>€</sup>4</div>
+  <p class="ticket-note" data-i18n="tick_note">per persoon · uitsluitend online beschikbaar</p>
+  <a href="https://www.monarchie.be" target="_blank" class="ticket-btn" data-i18n="tick_btn">Koop op monarchie.be</a>
+  <div class="ticket-features">
+    <div class="ticket-feature"><div class="dot"></div><span data-i18n="tf1">36 paviljoenen toegankelijk</span></div>
+    <div class="ticket-feature"><div class="dot"></div><span data-i18n="tf2">2,5 ha botanische pracht</span></div>
+    <div class="ticket-feature"><div class="dot"></div><span data-i18n="tf3">Geen kassa aan de ingang</span></div>
+    <div class="ticket-feature"><div class="dot"></div><span data-i18n="tf4">Geldig op de gekozen datum</span></div>
+  </div>
+</section>
+
+<!-- FEEDBACK -->
+<div id="feedback">
+  <div class="feedback-inner">
+    <div class="section-tag" data-i18n="fb_tag">Bezoekersfeedback</div>
+    <h2 class="section-title" data-i18n="fb_title">Deel je <em>mening</em></h2>
+    <p class="feedback-sub" data-i18n="fb_sub">Help ons de Serres Royales bekender te maken</p>
+    <div class="feedback-form-wrap">
+      <iframe data-tally-src="https://tally.so/embed/0QoNVA?alignLeft=1&hideTitle=0&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="400" frameborder="0" marginheight="0" marginwidth="0" title="Serres Royales — Bezoekersfeedback"></iframe>
+      <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Serres Royales de Laeken</div>
+  <p class="footer-sub" data-i18n="footer_sub">Avenue du Parc Royal 61 · 1020 Brussel · monarchie.be</p>
+</footer>
+
+<!-- PORTFOLIO BEWIJS -->
+<div class="portfolio-bar">
+  <span class="portfolio-label">🔗 Data Pipeline</span>
+  <a class="portfolio-link" href="https://datastudio.google.com/u/0/reporting/299b8f9c-766f-47fe-9909-e8f2eb0d29b5/page/0bVxF/edit" target="_blank" rel="noopener">
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M11 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-6M18 2l4 4-9 9H9v-4l9-9z"/></svg>
+    Looker Studio
+  </a>
+  <a class="portfolio-link" href="https://eu1.make.com/1641396/scenarios/5619687/edit" target="_blank" rel="noopener">
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+    Make.com
+  </a>
+  <a class="portfolio-link" href="https://docs.google.com/spreadsheets/d/1sDwYCMe-F-txpL7VOA6pwwI_jmDp0hS8-2WmeSaMiyg/edit?usp=sharing" target="_blank" rel="noopener">
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14H7v-2h5v2zm5-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+    Google Sheets
+  </a>
+</div>
+
+<!-- ── CHATBOT WIDGET ── -->
+<div class="chat-widget" id="chatWidget">
+  <div class="chat-panel" id="chatPanel">
+    <div class="cp-header">
+      <div class="cp-avatar">🌿</div>
+      <div class="cp-info">
+        <h3>Léo</h3>
+        <span data-i18n="chat_sub">Gids Serres Royales</span>
+      </div>
+      <div class="cp-online"></div>
+      <button class="cp-close" id="chatClose" title="Sluiten">×</button>
+    </div>
+    <div class="cp-messages" id="cpMessages"></div>
+    <div class="cp-input">
+      <textarea class="cp-textarea" id="cpInput" rows="1" placeholder="Stel een vraag…" data-placeholder-i18n="chat_placeholder"></textarea>
+      <button class="cp-send" id="cpSend">
+        <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      </button>
+    </div>
+  </div>
+  <div style="position:relative">
+    <button class="chat-toggle" id="chatToggle" title="Chat met Léo">🌿</button>
+    <div class="chat-badge" id="chatBadge">1</div>
+  </div>
+</div>
+
+<script>
+/* ── I18N ─────────────────────────────────────────────────── */
+const TRANSLATIONS = {
+  nl: {
+    nav_histoire:'Geschiedenis', nav_paviljoenen:'Paviljoenen', nav_bezoek:'Bezoek', nav_tickets:'Tickets',
+    hero_eyebrow:'Domaine Royal de Laeken · Brussel',
+    hero_title:'Serres<br><em>Royales</em><br>de Laeken',
+    hero_sub:'Een botanisch juweel van het Belgisch Koningshuis — slechts drie weken per jaar te bewonderen.',
+    hero_cta:'Plan uw bezoek', hero_scroll:'Ontdek',
+    stat_year:'Eerste steen', stat_pav:'Paviljoenen', stat_surface:'Oppervlakte', stat_ticket:'Per persoon',
+    histoire_tag:'Geschiedenis & Architectuur',
+    histoire_title:'Een <em>meesterwerk</em> in glas en ijzer',
+    histoire_body:'Diep in het Koninklijk Domein van Laeken, verscholen achter eeuwenoude bomen, sluimert een botanisch wonder dat de wereld nauwelijks kent. Hofarchitect Alphonse Balat — leermeester van Victor Horta — tekende tussen 1874 en 1905 een serrecomplex van 36 paviljoenen dat de grenzen vervagt tussen kunst, natuur en koninklijke grandeur. Drie weken per jaar mogen wij binnenstappen in zijn droom.',
+    arch_dates:'Architect · Bouw: 1874–1905',
+    arch_body:'Hofarchitect Alphonse Balat was ook de leermeester van Victor Horta. Hij ontwierp de serres in een neoclassicistische stijl met indrukwekkende glas-en-ijzerconstructies die de tand des tijds hebben doorstaan.',
+    pav_tag:'De drie iconen', pav_title:'Bekende <em>Paviljoenen</em>',
+    pav1_desc:'De iconische glazen koepel — het kloppende hart van het serrecomplex met een indrukwekkende centrale rotonde waar licht en planten in perfecte harmonie samenkomen.',
+    pav1_tag:'Hoofdpaviljoen',
+    pav2_desc:'Exotische tropische planten uit voormalig Belgisch Congo, waaronder indrukwekkende palmbomen die de hoogte in reiken alsof ze nog altijd midden in de jungle staan.',
+    pav2_tag:'Tropisch',
+    pav3_desc:'Eeuwenoude citrus- en laurierbomen in een sierlijk paviljoen dat pure 19e-eeuwse charme uitstraalt — alsof de tijd hier heeft stilgestaan.',
+    pav3_tag:'Citrus & Laurier',
+    gal_tag:'Beeldgalerij', gal_title:'Botanische <em>Schoonheid</em>',
+    bezoek_tag:'Praktische Info', bezoek_title:'Plan uw <em>Bezoek</em>',
+    bezoek_body:'De Serres zijn slechts enkele weken per jaar open — een zeldzame kans die u niet wil missen.',
+    ic_adres:'Adres', ic_metro:'Metro',
+    ic_metro_val:'Lijn <strong>6</strong><br>Halte <strong>Stuyvenbergh</strong>',
+    ic_open:'Opening', ic_open_val:'<strong>April – Mei</strong><br>ca. 3 weken per jaar',
+    ic_ticket:'Ticket', ic_ticket_val:'<strong>€4</strong> per persoon<br>Online via monarchie.be',
+    map_note:'Domaine Royal de Laeken · Noord Brussel',
+    tick_tag:'Reserveer nu', tick_title:'Uw Toegangs<em>ticket</em>',
+    tick_note:'per persoon · uitsluitend online beschikbaar',
+    tick_btn:'Koop op monarchie.be',
+    tf1:'36 paviljoenen toegankelijk', tf2:'2,5 ha botanische pracht',
+    tf3:'Geen kassa aan de ingang', tf4:'Geldig op de gekozen datum',
+    fb_tag:'Bezoekersfeedback', fb_title:'Deel je <em>mening</em>', fb_sub:'Help ons de Serres Royales bekender te maken',
+    footer_sub:'Avenue du Parc Royal 61 · 1020 Brussel · monarchie.be',
+    chat_sub:'Gids Serres Royales', chat_placeholder:'Stel een vraag…',
+    chat_welcome:'Bonjour! Ik ben <strong>Léo</strong>, uw persoonlijke gids voor de Serres Royales de Laeken. 🌿<br><br>Waarmee kan ik u helpen?',
+    chips: ['Openingsuren?','Tickets kopen','Metro & adres','Welke paviljoenen?','Wie bouwde de serres?'],
+    chat_off:'Ik ben Léo en help u uitsluitend met vragen over de <strong>Serres Royales de Laeken</strong>. 🌿<br>Stel gerust uw vraag!',
+  },
+  fr: {
+    nav_histoire:'Histoire', nav_paviljoenen:'Pavillons', nav_bezoek:'Visite', nav_tickets:'Billets',
+    hero_eyebrow:'Domaine Royal de Laeken · Bruxelles',
+    hero_title:'Serres<br><em>Royales</em><br>de Laeken',
+    hero_sub:'Un joyau botanique de la Maison Royale de Belgique — ouvert seulement trois semaines par an.',
+    hero_cta:'Planifiez votre visite', hero_scroll:'Découvrir',
+    stat_year:'Première pierre', stat_pav:'Pavillons', stat_surface:'Superficie', stat_ticket:'Par personne',
+    histoire_tag:'Histoire & Architecture',
+    histoire_title:'Un <em>chef-d\'œuvre</em> de verre et de fer',
+    histoire_body:'Au cœur du domaine royal de Laeken se cache un trésor botanique que le monde a presque oublié. L\'architecte de cour Alphonse Balat — maître de Victor Horta — y a érigé entre 1874 et 1905 un ensemble de 36 pavillons de verre et de fer forgé, où la nature tropicale côtoie le faste royal. Trois semaines par an, ces portes s\'ouvrent — et le temps s\'arrête.',
+    arch_dates:'Architecte · Construction: 1874–1905',
+    arch_body:'L\'architecte de cour Alphonse Balat était aussi le maître de Victor Horta. Il conçut les serres dans un style néoclassique avec d\'impressionnantes constructions en verre et fer forgé qui ont traversé les siècles.',
+    pav_tag:'Les trois icônes', pav_title:'Pavillons <em>Célèbres</em>',
+    pav1_desc:'L\'iconique coupole de verre — le cœur battant du complexe avec une impressionnante rotonde centrale où la lumière et les plantes se rencontrent en parfaite harmonie.',
+    pav1_tag:'Pavillon principal',
+    pav2_desc:'Plantes tropicales exotiques de l\'ancien Congo belge, dont de magnifiques palmiers qui s\'élèvent vers la lumière comme s\'ils se trouvaient encore en pleine jungle.',
+    pav2_tag:'Tropical',
+    pav3_desc:'Des citronniers et des lauriers centenaires dans un élégant pavillon qui dégage une charme authentique du XIXe siècle — comme si le temps s\'y était arrêté.',
+    pav3_tag:'Agrumes & Lauriers',
+    gal_tag:'Galerie', gal_title:'Beauté <em>Botanique</em>',
+    bezoek_tag:'Infos pratiques', bezoek_title:'Planifiez votre <em>Visite</em>',
+    bezoek_body:'Les Serres ne sont ouvertes que quelques semaines par an — une occasion rare à ne pas manquer.',
+    ic_adres:'Adresse', ic_metro:'Métro',
+    ic_metro_val:'Ligne <strong>6</strong><br>Arrêt <strong>Stuyvenbergh</strong>',
+    ic_open:'Ouverture', ic_open_val:'<strong>Avril – Mai</strong><br>env. 3 semaines par an',
+    ic_ticket:'Billet', ic_ticket_val:'<strong>€4</strong> par personne<br>En ligne via monarchie.be',
+    map_note:'Domaine Royal de Laeken · Bruxelles Nord',
+    tick_tag:'Réservez maintenant', tick_title:'Votre billet d\'<em>entrée</em>',
+    tick_note:'par personne · uniquement en ligne',
+    tick_btn:'Achetez sur monarchie.be',
+    tf1:'36 pavillons accessibles', tf2:'2,5 ha de splendeur botanique',
+    tf3:'Pas de caisse à l\'entrée', tf4:'Valable à la date choisie',
+    fb_tag:'Retour visiteurs', fb_title:'Partagez votre <em>avis</em>', fb_sub:'Aidez-nous à faire connaître les Serres Royales',
+    footer_sub:'Avenue du Parc Royal 61 · 1020 Bruxelles · monarchie.be',
+    chat_sub:'Guide Serres Royales', chat_placeholder:'Posez une question…',
+    chat_welcome:'Bonjour ! Je suis <strong>Léo</strong>, votre guide personnel pour les Serres Royales de Laeken. 🌿<br><br>Comment puis-je vous aider ?',
+    chips: ['Heures d\'ouverture?','Acheter des billets','Métro & adresse','Quels pavillons?','Qui a construit?'],
+    chat_off:'Je suis Léo et je réponds uniquement aux questions sur les <strong>Serres Royales de Laeken</strong>. 🌿<br>N\'hésitez pas à poser votre question !',
+  },
+  en: {
+    nav_histoire:'History', nav_paviljoenen:'Pavilions', nav_bezoek:'Visit', nav_tickets:'Tickets',
+    hero_eyebrow:'Royal Domain of Laeken · Brussels',
+    hero_title:'Royal<br><em>Greenhouses</em><br>of Laeken',
+    hero_sub:'A botanical jewel of the Belgian Royal Family — open to the public for just three weeks each year.',
+    hero_cta:'Plan your visit', hero_scroll:'Discover',
+    stat_year:'Foundation stone', stat_pav:'Pavilions', stat_surface:'Surface area', stat_ticket:'Per person',
+    histoire_tag:'History & Architecture',
+    histoire_title:'A <em>masterpiece</em> of glass and iron',
+    histoire_body:'Tucked behind ancient trees in the King\'s private estate, a world few people know exists waits quietly. Court architect Alphonse Balat — mentor to Art Nouveau pioneer Victor Horta — spent three decades building 36 glass pavilions that blur the line between palace and jungle. For three weeks each spring, the gates open. This is your invitation.',
+    arch_dates:'Architect · Built: 1874–1905',
+    arch_body:'Court architect Alphonse Balat was also the mentor of Victor Horta. He designed the greenhouses in a neo-classical style with impressive glass and iron constructions that have stood the test of time.',
+    pav_tag:'The three icons', pav_title:'Famous <em>Pavilions</em>',
+    pav1_desc:'The iconic glass dome — the beating heart of the greenhouse complex, with an impressive central rotunda where light and plants meet in perfect harmony.',
+    pav1_tag:'Main pavilion',
+    pav2_desc:'Exotic tropical plants from the former Belgian Congo, including towering palm trees that reach toward the glass ceiling as if they were still standing deep in the jungle.',
+    pav2_tag:'Tropical',
+    pav3_desc:'Centuries-old citrus and laurel trees in an elegant pavilion radiating pure 19th-century charm — as if time itself had stopped here.',
+    pav3_tag:'Citrus & Laurel',
+    gal_tag:'Gallery', gal_title:'Botanical <em>Beauty</em>',
+    bezoek_tag:'Practical Info', bezoek_title:'Plan your <em>Visit</em>',
+    bezoek_body:'The Greenhouses are only open a few weeks a year — a rare opportunity you don\'t want to miss.',
+    ic_adres:'Address', ic_metro:'Metro',
+    ic_metro_val:'Line <strong>6</strong><br>Stop <strong>Stuyvenbergh</strong>',
+    ic_open:'Opening', ic_open_val:'<strong>April – May</strong><br>approx. 3 weeks per year',
+    ic_ticket:'Ticket', ic_ticket_val:'<strong>€4</strong> per person<br>Online at monarchie.be',
+    map_note:'Royal Domain of Laeken · North Brussels',
+    tick_tag:'Reserve now', tick_title:'Your entry <em>ticket</em>',
+    tick_note:'per person · exclusively available online',
+    tick_btn:'Buy at monarchie.be',
+    tf1:'36 pavilions accessible', tf2:'2.5 ha of botanical splendour',
+    tf3:'No box office at the entrance', tf4:'Valid on your chosen date',
+    fb_tag:'Visitor feedback', fb_title:'Share your <em>thoughts</em>', fb_sub:'Help us make the Royal Greenhouses better known',
+    footer_sub:'Avenue du Parc Royal 61 · 1020 Brussels · monarchie.be',
+    chat_sub:'Royal Greenhouses Guide', chat_placeholder:'Ask a question…',
+    chat_welcome:'Hello! I\'m <strong>Léo</strong>, your personal guide to the Royal Greenhouses of Laeken. 🌿<br><br>How can I help you?',
+    chips: ['Opening hours?','Buy tickets','Metro & address','Which pavilions?','Who built them?'],
+    chat_off:'I\'m Léo and I can only help with questions about the <strong>Royal Greenhouses of Laeken</strong>. 🌿<br>Feel free to ask!',
+  }
+};
+
+let currentLang = 'nl';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.textContent.toLowerCase() === lang);
+  });
+  const t = TRANSLATIONS[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  document.querySelectorAll('[data-placeholder-i18n]').forEach(el => {
+    const key = el.getAttribute('data-placeholder-i18n');
+    if (t[key]) el.placeholder = t[key];
+  });
+  // update chat panel subtitle if open
+  const cpSub = document.querySelector('.cp-info span');
+  if (cpSub) cpSub.textContent = t.chat_sub || '';
+}
+
+/* ── CHATBOT KNOWLEDGE ───────────────────────────────────── */
+const KNOWLEDGE = {
+  adres: {
+    kw: ['adres','adresse','address','waar','où','where','locatie','location','gelegen','situated','brussel','laeken','straat','route'],
+    nl: '🗺️ De Serres zijn gelegen op:<br><br><strong>Avenue du Parc Royal 61, 1020 Brussel</strong><br><br>In het domein van het Koninklijk Paleis van Laeken, Noord-Brussel.',
+    fr: '🗺️ Les Serres sont situées à :<br><br><strong>Avenue du Parc Royal 61, 1020 Bruxelles</strong><br><br>Dans le domaine du Palais Royal de Laeken, au nord de Bruxelles.',
+    en: '🗺️ The Greenhouses are located at:<br><br><strong>Avenue du Parc Royal 61, 1020 Brussels</strong><br><br>Within the grounds of the Royal Palace of Laeken, North Brussels.',
+  },
+  metro: {
+    kw: ['metro','tram','bus','transport','stuyvenbergh','lijn','ligne','line','bereiken','arriver','reach','openbaar','public'],
+    nl: '🚇 De makkelijkste manier is met <strong>Metro Lijn 6</strong> tot halte <strong>Stuyvenbergh</strong> — van daaruit is het een aangename wandeling naar de Serres. Het adres is Avenue du Parc Royal 61, 1020 Brussel. Wil je weten hoe laat je best vertrekt?',
+    fr: '🚇 Le moyen le plus simple est le <strong>Métro Ligne 6</strong> jusqu\'à l\'arrêt <strong>Stuyvenbergh</strong> — de là, c\'est une agréable promenade jusqu\'aux Serres. L\'adresse est Avenue du Parc Royal 61, 1020 Bruxelles. Voulez-vous savoir à quelle heure partir ?',
+    en: '🚇 The easiest way is <strong>Metro Line 6</strong> to <strong>Stuyvenbergh</strong> station — from there it\'s a pleasant walk to the Greenhouses. The address is Avenue du Parc Royal 61, 1020 Brussels. Would you like to know the best time to arrive?',
+  },
+  open: {
+    kw: ['open','ouvert','opening','uren','heures','hours','wanneer','quand','when','april','mai','may','mei','seizoen','saison','season','periode','weken','semaines','weeks'],
+    nl: '📅 De Serres Royales zijn het hele jaar door het best bewaarde geheim van Brussel — en slechts <strong>3 weken per jaar</strong> open voor het publiek, doorgaans in <strong>april–mei</strong>. Dat maakt elk bezoek bijzonder! Wil je weten wanneer de tickets te koop zijn? Check <strong>monarchie.be</strong>.',
+    fr: '📅 Les Serres Royales restent le mieux gardé de Bruxelles tout au long de l\'année — et n\'ouvrant leurs portes que <strong>3 semaines</strong>, généralement en <strong>avril–mai</strong>. Chaque visite est donc unique ! Envie de connaître les dates exactes ? Consultez <strong>monarchie.be</strong>.',
+    en: '📅 The Royal Greenhouses are Brussels\' best-kept secret for most of the year — opening to the public for just <strong>3 weeks</strong>, usually in <strong>April–May</strong>. That makes every visit truly special! Want to know the exact dates? Check <strong>monarchie.be</strong>.',
+  },
+  ticket: {
+    kw: ['ticket','billet','prijs','prix','price','kopen','acheter','buy','kost','coût','cost','euro','betalen','payer','pay','online','monarchie','reserveren','réserver','reserve','entree','entrée'],
+    nl: '🎟️ Een bezoek aan dit koninklijk juweel kost slechts <strong>€4 per persoon</strong> — één van de beste deals in Brussel! Tickets koop je uitsluitend online via <strong>monarchie.be</strong>. Belangrijk: er is geen kassa aan de ingang, dus zorg dat je op voorhand reserveert. Zal ik je de link geven?',
+    fr: '🎟️ Une visite de ce joyau royal ne coûte que <strong>4 € par personne</strong> — l\'une des meilleures affaires de Bruxelles ! Les billets s\'achètent exclusivement en ligne sur <strong>monarchie.be</strong>. Important : il n\'y a pas de caisse à l\'entrée, pensez donc à réserver à l\'avance. Je vous donne le lien ?',
+    en: '🎟️ Visiting this royal gem costs just <strong>€4 per person</strong> — one of the best deals in Brussels! Tickets are available exclusively online at <strong>monarchie.be</strong>. Important: there is no ticket office at the entrance, so make sure you book in advance. Want me to point you to the link?',
+  },
+  architect: {
+    kw: ['architect','architecte','balat','alphonse','gebouwd','construit','built','bouw','constructi','geschiede','histoir','history','1874','1905','ontwerp','conçu','designed'],
+    nl: '🏛️ De Serres werden ontworpen door <strong>Alphonse Balat</strong>.<br><br>Bouw: <strong>1874–1905</strong>. Hij was ook de leermeester van Victor Horta, vader van de Belgische art nouveau.',
+    fr: '🏛️ Les Serres ont été conçues par <strong>Alphonse Balat</strong>.<br><br>Construction : <strong>1874–1905</strong>. Il fut aussi le maître de Victor Horta, père de l\'Art nouveau belge.',
+    en: '🏛️ The Greenhouses were designed by <strong>Alphonse Balat</strong>.<br><br>Built: <strong>1874–1905</strong>. He was also the mentor of Victor Horta, father of Belgian Art Nouveau.',
+  },
+  grootte: {
+    kw: ['groot','grand','big','size','oppervlakte','surface','area','hectare','pavil','36','hoeveel','combien','how many'],
+    nl: '🌱 De Serres beslaan <strong>2,5 hectare</strong> verdeeld over <strong>36 paviljoenen</strong>.<br><br>Het is één van de grootste koninklijke serrecomplexen ter wereld!',
+    fr: '🌱 Les Serres couvrent <strong>2,5 hectares</strong> répartis en <strong>36 pavillons</strong>.<br><br>C\'est l\'un des plus grands complexes de serres royales au monde !',
+    en: '🌱 The Greenhouses cover <strong>2.5 hectares</strong> spread across <strong>36 pavilions</strong>.<br><br>One of the largest royal greenhouse complexes in the world!',
+  },
+  paviljoenen: {
+    kw: ['pavil','jardin','hiver','winter','congo','orangerie','bekendste','célèbre','famous','tropisch','tropical','palm','bloemen','fleurs','flowers','planten','plantes','plants'],
+    nl: '🌺 De drie sterren van de Serres zijn:<br><br>• <strong>Jardin d\'Hiver</strong> — adembenemende glazen koepel<br>• <strong>Serre du Congo</strong> — tropische palmbomen<br>• <strong>Orangerie</strong> — eeuwenoude citrusbomen<br><br>Elk paviljoen heeft zijn eigen magische sfeer. Welk paviljoen spreekt jou het meest aan?',
+    fr: '🌺 Les trois joyaux des Serres sont :<br><br>• <strong>Jardin d\'Hiver</strong> — impressionnante coupole de verre<br>• <strong>Serre du Congo</strong> — palmiers tropicaux<br>• <strong>Orangerie</strong> — citronniers centenaires<br><br>Chaque pavillon a sa propre atmosphère tropicale. Lequel vous attire le plus ?',
+    en: '🌺 The three stars of the Greenhouses are:<br><br>• <strong>Jardin d\'Hiver</strong> — breathtaking glass dome<br>• <strong>Serre du Congo</strong> — towering palm trees<br>• <strong>Orangerie</strong> — centuries-old citrus trees<br><br>Each pavilion has its own magical atmosphere. Which one appeals to you most?',
+  },
+};
+
+function getAnswer(input) {
+  const lower = input.toLowerCase();
+  let best = null, bestScore = 0;
+  for (const data of Object.values(KNOWLEDGE)) {
+    let score = 0;
+    for (const kw of data.kw) if (lower.includes(kw)) score++;
+    if (score > bestScore) { bestScore = score; best = data; }
+  }
+  if (bestScore === 0) return TRANSLATIONS[currentLang].chat_off;
+  return best[currentLang] || best.nl;
+}
+
+/* ── CHAT UI ─────────────────────────────────────────────── */
+const panel = document.getElementById('chatPanel');
+const toggle = document.getElementById('chatToggle');
+const closeBtn = document.getElementById('chatClose');
+const messages = document.getElementById('cpMessages');
+const input = document.getElementById('cpInput');
+const sendBtn = document.getElementById('cpSend');
+const badge = document.getElementById('chatBadge');
+let chatInitialized = false;
+
+toggle.addEventListener('click', () => {
+  const isOpen = panel.classList.toggle('open');
+  toggle.textContent = isOpen ? '×' : '🌿';
+  if (isOpen) {
+    badge.style.display = 'none';
+    if (!chatInitialized) { initChat(); chatInitialized = true; }
+    setTimeout(() => input.focus(), 400);
+  } else {
+    toggle.textContent = '🌿';
+  }
+});
+
+closeBtn.addEventListener('click', () => {
+  panel.classList.remove('open');
+  toggle.textContent = '🌿';
+});
+
+function initChat() {
+  addMsg(TRANSLATIONS[currentLang].chat_welcome, 'bot');
+  setTimeout(() => addChips(TRANSLATIONS[currentLang].chips), 400);
+}
+
+function addMsg(html, role) {
+  const wrap = document.createElement('div');
+  wrap.className = `msg ${role}`;
+  const av = document.createElement('div');
+  av.className = 'msg-av';
+  av.textContent = role === 'bot' ? '🌿' : '👤';
+  const bub = document.createElement('div');
+  bub.className = 'bubble';
+  bub.innerHTML = html;
+  wrap.appendChild(av);
+  wrap.appendChild(bub);
+  messages.appendChild(wrap);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function addChips(items) {
+  const old = document.getElementById('chatChips');
+  if (old) old.remove();
+  const c = document.createElement('div');
+  c.className = 'chips';
+  c.id = 'chatChips';
+  items.forEach(label => {
+    const b = document.createElement('button');
+    b.className = 'chip';
+    b.textContent = label;
+    b.onclick = () => { c.remove(); processMsg(label); };
+    c.appendChild(b);
+  });
+  messages.appendChild(c);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function showTyping() {
+  const t = document.createElement('div');
+  t.className = 'typing-ind';
+  t.id = 'typingInd';
+  const av = document.createElement('div');
+  av.className = 'msg-av';
+  av.style.cssText = 'width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#4a7c59,#7aab8a);border:1px solid rgba(201,168,76,0.25);display:flex;align-items:center;justify-content:center;font-size:13px;';
+  av.textContent = '🌿';
+  const dots = document.createElement('div');
+  dots.className = 't-dots';
+  for (let i=0;i<3;i++) dots.appendChild(document.createElement('span'));
+  t.appendChild(av); t.appendChild(dots);
+  messages.appendChild(t);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function processMsg(text) {
+  if (!text.trim()) return;
+  addMsg(text, 'user');
+  showTyping();
+  setTimeout(() => {
+    document.getElementById('typingInd')?.remove();
+    addMsg(getAnswer(text), 'bot');
+  }, 700 + Math.random() * 500);
+}
+
+sendBtn.addEventListener('click', () => {
+  const v = input.value.trim();
+  if (!v) return;
+  input.value = '';
+  input.style.height = 'auto';
+  document.getElementById('chatChips')?.remove();
+  processMsg(v);
+});
+
+input.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendBtn.click(); }
+});
+
+input.addEventListener('input', function() {
+  this.style.height = 'auto';
+  this.style.height = Math.min(this.scrollHeight, 80) + 'px';
+});
+
+// Animate on scroll
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.info-card, .paviljoen-card, .stat-item').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(24px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
+});
+
+// Re-init chat language when lang changes
+const origSetLang = setLang;
+window.setLang = function(lang) {
+  origSetLang(lang);
+  // Update input placeholder
+  const inp = document.getElementById('cpInput');
+  if (inp) inp.placeholder = TRANSLATIONS[lang].chat_placeholder || '…';
+};
+</script>
+</body>
+</html>
